@@ -61,4 +61,30 @@ type Liquidity = {
   proportion: number;
 };
 
-export { Order, OrderBook, placeOrder, cancelOrder, matchOrders, Reserve, Liquidity };
+// Functions for AMM
+
+function addLiquidity(amount: Reserve, reserve: Reserve): Reserve {
+  return { tokenX: reserve.tokenX + amount.tokenX, tokenY: reserve.tokenY + amount.tokenY };
+}
+
+function removeLiquidity(liquidity: Liquidity, reserve: Reserve): { newReserve: Reserve, removed: Reserve } {
+  const removed = { tokenX: reserve.tokenX * liquidity.proportion, tokenY: reserve.tokenY * liquidity.proportion };
+  const newReserve = { tokenX: reserve.tokenX - removed.tokenX, tokenY: reserve.tokenY - removed.tokenY };
+  return { newReserve, removed };
+}
+
+function swap(inputToken: 'tokenX' | 'tokenY', amount: number, reserve: Reserve): { newReserve: Reserve, outputAmount: number } {
+  const inputAmount = reserve[inputToken];
+  const outputToken = inputToken === 'tokenX' ? 'tokenY' : 'tokenX';
+  const outputAmount = reserve[outputToken];
+  
+  const newInputAmount = inputAmount - amount;
+  const newOutputAmount = outputAmount * inputAmount / newInputAmount;
+  
+  const newReserve = { ...reserve, [inputToken]: newInputAmount, [outputToken]: newOutputAmount };
+  const outputAmount = outputAmount - newOutputAmount;
+  
+  return { newReserve, outputAmount };
+}
+
+export { Order, OrderBook, placeOrder, cancelOrder, matchOrders, Reserve, Liquidity, addLiquidity, removeLiquidity, swap };
