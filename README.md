@@ -1,5 +1,5 @@
 # Bitcoin Derivatives with AI assitance
-
+## THIS IS A TEST - I AM CHANGING THE README FILE
 ## Repo for a Chapman University blockchain testnet and CPSC-370 course. 
 
 The methods and results of this project will be taught in the Fall 2023 course CPSC-370 *The Decentralized Web and Scalable Blockchain Programming*.
@@ -37,6 +37,10 @@ The methods and results of this project will be taught in the Fall 2023 course C
 - [16-Nov-2023](./lectures/lecture24.md)
 - [28-Nov-2023](./lectures/lecture25.md)
 - [30-Nov-2023](./lectures/lecture26.md)
+- [2-Dec-2023](./lectures/lecture26.md)
+- [5-Dec-2023](./lectures/lecture27.md)
+- [7-Dec-2023](./lectures/lecture28.md)
+- [11-Dec-2023](./lectures/Final.md)
 
 ## Assignments & Quizes
 - [Due: 31-Aug-2023](./assignments/31_Aug_2023.md)
@@ -49,12 +53,7 @@ The methods and results of this project will be taught in the Fall 2023 course C
 - Seventh Week Quiz out on 12th; Due by End of Day 18-October-2023
 - Eigth Week Quiz out on 25th; Due by End of Day 29-October-2023
 
-### Resourcs
 
-* [Warp](app.warp.dev/referral/PXZMWP)
-* [settings.json for VSCode](./resources/settings.json)
+This class completed the fall/winter at Chapman University in 2023
 
-### Testnet Project Outline:
-
-<div align="center"><img src="./docs/drawings/Chapman_testnet.png"></img></div>
-
+See the final project at: [BTCDapp.dating](https://www.btcdapp.dating/)
